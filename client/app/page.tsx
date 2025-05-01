@@ -4,8 +4,11 @@
 import { motion } from "framer-motion";
 import { Bot, SendHorizonal, User } from "lucide-react";
 import { useState } from "react";
+import { URLS } from "./utils/urls";
+import { configDotenv } from "dotenv";
 
 export default function Home() {
+  configDotenv();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<{ text: string; role: string }[]>([]);
 
@@ -13,7 +16,7 @@ export default function Home() {
     const userMessage = { text: message, role: "user" };
     setMessages((prev) => [...prev, userMessage]);
 
-    const res = await fetch("http://127.0.0.1:8000/chat", {
+    const res = await fetch(URLS.chat, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,6 +31,7 @@ export default function Home() {
   };
 
   const handleSend = () => {
+    console.log(process.env.BACKEND)
     if (input.trim() === "") return;
     fetchChat(input);
     setInput("");

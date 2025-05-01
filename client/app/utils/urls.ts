@@ -1,4 +1,4 @@
-export const BACKEND = "http://127.0.0.1:8000"
+export const BACKEND = process.env.BACKEND || "https://vercel-fastapi-two-indol.vercel.app"
 export const URLS ={
     chat : `${BACKEND}/chat`
 }
