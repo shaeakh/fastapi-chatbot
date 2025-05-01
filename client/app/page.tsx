@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-pink-100 p-6">
       <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-6 space-y-4">
-        <div className="text-3xl font-bold text-center mb-4 text-indigo-600">Shaeakh's Bot 🤖</div>
+        <div className="text-3xl font-bold text-center mb-4 text-indigo-600">Shaeakhs Bot 🤖</div>
 
         <div className="h-[60vh] overflow-y-auto space-y-4 scroll-smooth pr-2">
           {messages.map((msg, i) => (
